@@ -13,7 +13,7 @@ def main():
     # get bucket with name
     bucket = storage_client.get_bucket(BUCKET_NAME)
     # get bucket data as blob
-    blob = bucket.get_blob('contentsDB_32TYFF02_1.00.00_en_GB_Navi_20200408.json')
+    blob = bucket.get_blob('doc1.json')
     data = json.loads(blob.download_as_string())
     # create datastore entity
     imported_json = datastore.Entity(key=datastore.Client(PROJECT_ID).key("data"))
